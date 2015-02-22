@@ -1,0 +1,190 @@
+<div class="row">
+
+    <div class="col-md-11"><h3>Account</h3>
+
+        <!-- tabs left -->
+        <div class="tabbable tabs-left">
+            <ul class="nav nav-tabs">
+                <li ng-class="isActive('profile')"><a href="#/account?type=profile" data-toggle="tab">Profile Information</a></li>
+                <li ng-class="isActive('payment')"><a href="#/account?type=payment" data-toggle="tab">Payment Information</a></li>
+                <li ng-class="isActive('purchase')"><a href="#/account?type=purchase" data-toggle="tab">Purchase History</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane " ng-class="isActive('profile')" >
+                    <div class="tab-container row">
+                        <div class="row ">
+                            <div class="col-md-12">
+                                <h4>Please provide the following account profile information.</h4>
+                            </div>
+                        </div>
+                        <div class="row spacer10">
+                            <div class="col-md-2">Email Address</div>
+                            <div class="col-md-5"><input type="text" ng-model="email" class="width-60" /></div>
+                        </div>
+                        <div class="row spacer5">
+                            <div class="col-md-2">Password</div>
+                            <div class="col-md-5"><input type="password" class="width-60" /></div>
+
+                        </div>
+                        <div class="row spacer20">
+                            <div class="col-md-2">First Name</div>
+                            <div class="col-md-5"><input type="text" ng-model="first_name" class="width-60" /></div>
+
+                        </div>
+                        <div class="row spacer5">
+                            <div class="col-md-2">Last Name</div>
+                            <div class="col-md-5"><input type="text" ng-model="last_name" class="width-60" /></div>
+                        </div>
+                        <div class="row spacer20">
+                            <div class="col-md-2">Company Name</div>
+                            <div class="col-md-5"><input type="text" ng-model="company" class="width-60" /></div>
+
+                        </div>
+                        <div class="row spacer5">
+                            <div class="col-md-2">Address1</div>
+                            <div class="col-md-5"><input type="text" ng-model="address1" class="width-60" /></div>
+                        </div>
+                        <div class="row spacer5">
+                            <div class="col-md-2">Address2</div>
+                            <div class="col-md-5"><input type="text" ng-model="address2" class="width-60" /></div>
+                        </div>
+                        <div class="row spacer5">
+                            <div class="col-md-2">City</div>
+                            <div class="col-md-5"><input type="text" ng-model="city" class="width-60" /></div>
+                        </div>
+                        <div class="row spacer5">
+                            <div class="col-md-2">State/Province</div>
+                            <div class="col-md-5"><input type="text" class="width-60" ng-model="state"/></div>
+                        </div>
+                        <div class="row spacer5">
+                            <div class="col-md-2">Country</div>
+                            <div class="col-md-5">
+                                <select ng-model="my_country" ng-options="country.name for country in countries"></select></div>
+                        </div>
+                        <div class="row spacer5">
+                            <div class="col-md-2">Zip/Postale</div>
+                            <div class="col-md-5"><input type="text" class="width-60" ng-model="zip" /></div>
+                        </div>
+                        <div class="row spacer30">
+                            <div class="col-md-offset-2 col-md-1">
+                                <button class="btn btn-default" >Save</button>
+                            </div>
+                            <div class="col-md-1">
+                                <button class="btn btn-info">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane " ng-class="isActive('payment')" >
+                    <div class="tab-container row">
+                        <div class="row ">
+                            <div class="col-md-12">
+                                <h4>Please provide the following payment information.</h4>
+                            </div>
+                        </div>
+                        <div class="row spacer10">
+                            <div class="col-md-3">Payment Option</div>
+                            <div class="col-md-2">
+                                <input type="radio" ng-model="payment_type" value="credit"> Credit Card &nbsp;
+                            </div>
+                            <div class="col-md-3">
+                                <input type="radio" ng-model="payment_type" value="invoice"> Invoice
+                            </div>
+                        </div>
+                        <div class="row spacer20">
+                            <div class="col-md-3">Credit Card Type</div>
+                            <div class="col-md-6">
+                                 <div ng-repeat="item in collection"
+                                       ng-class="{ 'credit-card-selected': $index == selectedIndex, 'cc-item-visa' : $index == 0,
+                                        'cc-item-master' : $index == 1, 'cc-item-mastro' : $index == 2,
+                                         'cc-item-amex' : $index == 3, 'cc-item-discover' : $index == 4,
+                                         'cc-item-diner' : $index == 5} "
+                                       ng-click="itemClicked($index)"> &nbsp;
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="row spacer30">
+                            <div class="col-md-3">Credit Card Number</div>
+                            <div class="col-md-5">
+                                <input type="text" class="width-60" />
+                            </div>
+                        </div>
+                        <div class="row spacer10">
+                            <div class="col-md-3">Expiry Date</div>
+                            <div class="col-md-1">
+                                <select ng-model="cur_month" ng-options="month.name for month in months"></select>
+                            </div>
+                            <div class="col-md-6" style="margin-left: -20px">
+                                <select ng-model="cur_year" ng-options="year.name for year in years"></select>
+                            </div>
+                        </div>
+                        <div class="row spacer10">
+                            <div class="col-md-3">Validation Code</div>
+                            <div class="col-md-5">
+                                <input type = "text" class="width-60" />
+                            </div>
+                        </div>
+                        <br /><br/><br/>
+                        <div class="row spacer30 ">
+                            <div class="col-md-offset-3 col-md-1">
+                                <button class="btn btn-default" >Save</button>
+                            </div>
+                            <div class="col-md-1">
+                                <button class="btn btn-info">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" ng-class="isActive('purchase')" >
+                    <div class="tab-container row">
+                        <div class="row ">
+                            <div class="col-md-8">
+                                <h4>There are the list of purchases you have made to-date.<br />Select the ones you would like to export</h4>
+                            </div>
+                            <div class="col-md-4 text-right">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search for...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default " type="button" >
+                                            <i class="glyphicon glyphicon-search" />
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row spacer10">
+                            <div class="col-md-12">
+                                <table class="table table-bordered sortable" style="background: #FFFFFF">
+                                    <thead>
+                                    <tr>
+                                        <th style="width: 5%" class="nosort" data-sortcolumn="3" data-sortkey="3-1">&nbsp;</th>
+                                        <th style="width: 10%"  data-mainsort="1" data-firstsort="desc" class="nosort" data-sortcolumn="1" data-sortkey="1-1">Purchase Date</th>
+                                        <th style="width: 20%" class="nosort" data-sortcolumn="3" data-sortkey="3-1">Purchase Type</th>
+                                        <th style="width: 10%" class="nosort" data-sortcolumn="4" data-sortkey="4-1">List Size</th>
+                                        <th style="width: 10%" data-defaultsign="month" class="nosort" data-sortcolumn="5" data-sortkey="5-1">Payment Amount</th>
+                                        <th style="width: 20%" data-defaultsign="month" class="nosort" data-sortcolumn="5" data-sortkey="5-1">Payment Status</th>
+                                        <th style="width: 20%" data-defaultsign="month" class="nosort" data-sortcolumn="5" data-sortkey="5-1">Payment Method</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td data-value="Peter Jackson" class="sorted">&nbsp;</td>
+                                            <td data-value="10.44">10.44</td>
+                                            <td data-value="2.95">2.95</td>
+                                            <td data-value="54.21">54.21</td>
+                                            <td data-value="67.6" class="">67.6</td>
+                                            <td data-value="Peter Jackson" class="sorted">Peter Jackson</td>
+                                            <td data-value="10.44">10.44</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /tabs -->
+
+    </div>
+</div>
