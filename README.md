@@ -1,4 +1,4 @@
-# nrich
+# NRich Demo 
 
 This project is a clickable Demo for NRich.
 
