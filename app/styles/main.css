@@ -75,6 +75,20 @@ body {
 .width-60{
     width:60%;
 }
+.text-right{
+    text-align: right;
+}
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+
+.btn-grey{
+    color: #FFF;
+    background-color: #a3a3a3;
+}
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {

@@ -1,1 +1,64 @@
-<p>This is the file view.</p>
+<div class="row">
+    <div class="col-md-11"><h3>Account</h3>
+        <div class="tabbable tabs-left">
+            <ul class="nav nav-tabs">
+                <li ng-class="isActive('upload')"><a href="#/file?type=upload" data-toggle="tab">File <br/>Upload</a></li>
+                <li ng-class="isActive('export')"><a href="#/file?type=export" data-toggle="tab">File <br/>Export</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane " ng-class="isActive('upload')" >
+                    <div class="tab-container row">
+                        <div class="row ">
+                            <div class="col-md-12">
+                                <p>Select one or more files using the <strong>Browse</strong> button, and upload<br/>them. <Strong>Please note:</Strong> the files need to be in .csv format.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="btn btn-grey" ng-file-select ng-model="files" ng-multiple="true">Browse</div>
+                            </div>
+                        </div>
+                        <div class="row spacer20">
+                            <div class="col-md-12">
+                                <p style="font-size: 22px">File List</p>
+                            </div>
+                        </div>
+                        <div class="row spacer10">
+                            <div class="col-md-12">
+                                <table class="table-bordered table">
+                                    <tbody>
+                                        <tr ng-repeat="f in files">
+                                            <td width="40%">
+                                                {{f.name}}
+                                            </td>
+                                            <td width="40%">
+                                                Progress...
+                                            </td>
+                                            <td width="10%">
+                                                100%
+                                            </td>
+                                            <td>
+                                                <a href="#" >Remove</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <br/><br/><br/><br/>
+                        <div class="row spacer30">
+                            <div class="col-md-12">
+                                <button type="button" class="btn btn-grey">Submit</button>&nbsp;&nbsp;&nbsp;
+                                <buttn type="button" class="btn btn-grey">Cancel</buttn>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" ng-class="isActive('export')" >
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
