@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'angularFileUpload'
+    'angularFileUpload',
+    'nvd3'
   ])
     .run(function($rootScope, $location) {
         $rootScope.getClass = function (path) {

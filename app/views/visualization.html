@@ -1,1 +1,46 @@
-<p>This is the visualization view.</p>
+<div class="row">
+
+    <div class="col-md-11"><h3>Account</h3>
+
+        <!-- tabs left -->
+        <div class="tabbable tabs-left">
+            <ul class="nav nav-tabs">
+                <li ng-class="isActive('match')"><a href="#/visualization?type=match" data-toggle="tab">Profile Information</a></li>
+                <li ng-class="isActive('data')"><a href="#/visualization?type=data" data-toggle="tab">Payment Information</a></li>
+                <li ng-class="isActive('save')"><a href="#/visualization?type=save" data-toggle="tab">Purchase History</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane " ng-class="isActive('match')" >
+                    <div class="tab-container row">
+                        <div class="row ">
+                            <div class="col-md-8">
+                                <p>Select one or more files to display the match rate of your data.</p>
+                            </div>
+                            <div class="col-md-4 text-right">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" >
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default " type="button" >
+                                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <nvd3 options="options" data="data"></nvd3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane " ng-class="isActive('data')" >
+
+                </div>
+                <div class="tab-pane " ng-class="isActive('save')" >
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
