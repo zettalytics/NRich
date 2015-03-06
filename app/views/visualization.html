@@ -27,11 +27,69 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row spacer20">
                             <div class="col-md-12">
-                                <nvd3 options="options" data="data"></nvd3>
+                                <p style="font-size: 20px;color:grey">File List</p>
                             </div>
                         </div>
+                        <div class="row spacer10">
+                            <div class="col-md-12" >
+                                <table class="table-bordered table" style="background: #FFFFFF">
+                                    <tbody>
+                                    <tr ng-repeat="f in files">
+                                        <td width="5%">
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td width="78%">
+                                            {{f.name}}
+                                            <p style="color: #a8d242;margin-bottom: 2px">{{f.size}}</p>
+                                            <p style="color: #a8d242;margin-bottom: 2px">{{f.modified}}</p>
+                                            <p style="color: #a8d242;margin-bottom: 2px">{{f.cleansed}}</p>
+                                        </td>
+                                        <td ng-class-odd="'bg-blue'" ng-class-even="'bg-green'" style="color:#FFFFFF">
+                                            <h1>{{f.percent}}</h1>
+                                            <p>{{f.records}}</p>
+                                        </td>
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row spacer20">
+                            <div class="col-md-12">
+                                <button type="button" class="btn btn-grey">Submit</button>&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn btn-grey">Cancel</button>&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn btn-grey" ng-click="toggle()">Visualize</button>
+                            </div>
+                        </div>
+                        <div class="row spacer20" ng-hide="hideVisual">
+                            <div class="col-md-12">
+                                <nvd3 options="options" data="data"></nvd3>
+
+                            </div>
+                            <table class="table-bordered table" style="background: #FFFFFF;width:900px">
+
+                                <tbody>
+                                    <tr>
+                                        <td width="9%">Your File</td>
+                                        <td width="16%" class="text-center">1,200,345</td>
+                                        <td width="16%" class="text-center">94,756</td>
+                                        <td width="16%" class="text-center">93,342</td>
+                                        <td width="17%" class="text-center">53,120</td>
+                                    </tr>
+                                    <tr>
+                                        <td>NRich</td>
+                                        <td class="text-center">399,753</td>
+                                        <td class="text-center">350,000</td>
+                                        <td class="text-center">345,734</td>
+                                        <td class="text-center">219,546</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+
                     </div>
                 </div>
                 <div class="tab-pane " ng-class="isActive('data')" >

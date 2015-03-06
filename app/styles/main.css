@@ -280,3 +280,11 @@ body {
     border-width: thin;
     border-color: red;
 }
+
+.bg-green {
+    background: #a8d242;
+}
+
+.bg-blue {
+    background: #3c97ac;
+}
