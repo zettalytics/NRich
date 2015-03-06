@@ -68,6 +68,9 @@ body {
 .spacer30 {
     margin-top: 30px;
 }
+.spacer40 {
+    margin-top: 40px;
+}
 .spacer5 {
     margin-top: 5px;
 }
@@ -132,7 +135,7 @@ body {
 
 .tab-container {
     background-color: #f0f3e5;
-    padding: 20px 20px 20px 60px;
+    padding: 20px 20px 20px 30px;
     min-height: 480px;
     margin-left: 0px;
 }

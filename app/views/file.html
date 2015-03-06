@@ -72,6 +72,48 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="row spacer20">
+                            <div class="col-md-12">
+                                <p style="font-size: 22px">File List</p>
+                            </div>
+                        </div>
+                        <div class="row spacer10">
+                            <div class="col-md-12">
+                                <table class="table-bordered table">
+                                    <tbody>
+                                    <tr ng-repeat="f in exportFiles">
+                                        <td width="5%">
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td width="40%">
+                                            {{f.name}}
+                                            <p style="color: #a8d242;margin-bottom: 2px">{{f.size}}</p>
+                                            <p style="color: #a8d242;margin-bottom: 2px">{{f.modified}}</p>
+                                            <p style="color: #a8d242;margin-bottom: 2px">{{f.exported}}</p>
+                                        </td>
+                                        <td width="40%">
+                                            Progress...
+                                        </td>
+                                        <td width="10%">
+                                            100%
+                                        </td>
+
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row spacer10">
+                            <div class="col-md-12">
+                                <p>Export location:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <button class="btn btn-grey" >Browse</button></p>
+                            </div>
+                        </div>
+                        <div class="row spacer40">
+                            <div class="col-md-12">
+                                <button type="button" class="btn btn-grey">Submit</button>&nbsp;&nbsp;&nbsp;
+                                <buttn type="button" class="btn btn-grey">Cancel</buttn>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

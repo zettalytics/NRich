@@ -45,6 +45,29 @@ app.controller('FileCtrl', function ($scope, $location, $upload) {
                 }
             }
         }
+        var file1 = new Object();
+        file1.name = "Women25Food.csv";
+        file1.status = "Cleansed, Appended";
+        file1.size = "1.2MB, 245,653 Records";
+        file1.modified = "Updated on 6/10/2014 12:34";
+        file1.exported = "Exported on 6/12/2014 11:35";
+        var file2 = new Object();
+        file2.name = "MenCarBuffs.csv";
+        file2.status = "Cleansed";
+        file2.size = "256KB, 53,034 Records";
+        file2.modified = "Updated on 8/20/2014 9:14";
+        file2.exported = "Exported on 8/23/2014 16:42";
+        var file3 = new Object();
+        file3.name = "HistoryFanatics.csv";
+        file3.status = "Appended";
+        file3.size = "23.5MB, 7,328,022 Records";
+        file3.modified = "Updated on 12/28/2014 11:05";
+        file3.exported = "Exported on 1/3/2015 8:05";
+        var files = new Array();
+        files.push(file1);
+        files.push(file2);
+        files.push(file3)
+        $scope.exportFiles = files;
   });
 
 

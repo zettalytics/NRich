@@ -1,1 +1,89 @@
-<p>This is the clean view.</p>
+<div class="row">
+
+    <div class="col-md-11"><h3>Cleansing</h3>
+        <div class="tabbable tabs-left">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#/clean" data-toggle="tab">Data Cleansing</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" >
+                    <div class="tab-container">
+                        <div class="row ">
+                            <div class="col-md-8">
+                                <p>Select one or more files from the following list to be cleansed.</p>
+                            </div>
+                            <div class="col-md-4 text-right">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search for...">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default " type="button" >
+                                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row spacer10">
+                            <div class="col-md-12">
+                                <p style="font-size: 20px;color: gray">File List</p>
+                            </div>
+                        </div>
+                        <div class="row spacer10">
+                            <div class="col-md-12">
+                                <table class="table-bordered table">
+                                    <tbody>
+                                    <tr ng-repeat="f in files">
+                                        <td>
+                                            <input type="checkbox" />
+                                        </td>
+                                        <td width="95%">
+                                            {{f.name}}
+                                            <p style="color: #a8d242;margin-bottom: 2px">{{f.size}}</p>
+                                            <p style="color: #a8d242;margin-bottom: 2px">{{f.modified}}</p>
+                                            <p style="color: #a8d242;margin-bottom: 2px">{{f.cleansed}}</p>
+                                            <br />
+                                            <table class="table table-striped">
+                                                <tr>
+                                                    <th class="text-center">Email/Domain</th>
+                                                    <th class="text-center">Name</th>
+                                                    <th class="text-center">De-dup</th>
+                                                    <th class="text-center">Other</th>
+                                                    <th class="text-center">Complete</th>
+                                                </tr>
+                                                <tr>
+                                                    <td width="25%" ng-if="f.email_cleansed == true" class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                                                    <td width="25%" ng-if="f.email_cleansed == false" class="text-center"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
+                                                    <td width="25%" ng-if="f.email_cleansed == null" class="text-center">&nbsp;</td>
+                                                    <td width="22%" ng-if="f.name_cleansed == true" class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                                                    <td width="22%" ng-if="f.name_cleansed == false" class="text-center"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
+                                                    <td width="22%" ng-if="f.name_cleansed == null" class="text-center">&nbsp;</td>
+                                                    <td width="21%" ng-if="f.de_dup == true" class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                                                    <td width="21%" ng-if="f.de_dup == false" class="text-center"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
+                                                    <td width="21%" ng-if="f.de_dup == null" class="text-center">&nbsp;</td>
+                                                    <td width="21%" ng-if="f.other_cleansed == true" class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                                                    <td width="21%" ng-if="f.other_cleansed == false" class="text-center"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
+                                                    <td width="21%" ng-if="f.other_cleansed == null" class="text-center">&nbsp;</td>
+                                                    <td width="22%" ng-if="f.complete_cleansed == true" class="text-center"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
+                                                    <td width="22%" ng-if="f.complete_cleansed == false" class="text-center"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
+                                                    <td width="22%" ng-if="f.complete_cleansed == null" class="text-center">&nbsp;</td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row spacer30">
+                            <div class="col-md-12">
+                                <button type="button" class="btn btn-grey">Submit</button>&nbsp;&nbsp;&nbsp;
+                                <buttn type="button" class="btn btn-grey">Cancel</buttn>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
