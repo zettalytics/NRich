@@ -93,10 +93,151 @@
                     </div>
                 </div>
                 <div class="tab-pane " ng-class="isActive('data')" >
+                    <div class="tab-container row">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <p style="font-size: 20px;color:grey">File Selected</p>
+                                <p style="color:#a8d242">{{files[0].name}}<br/>
+                                {{files[0].size}}</p>
+                                <div class="spacer10">
+                                    Select/Change file for data visualization.
+                                </div>
+                                <div class="spacer5">
+                                    <button type="button" class="btn btn-grey">Browse</button>
+                                </div>
+                                <hr style="border-color: #CCC;border-width: 2px 0px 0px">
+                                <div class="spacer5">
+                                    <p>Select list of fields for data visualization.</p>
+                                </div>
+                                <div class="spacer5">
+                                    <table class="table-bordered table" style="width: 85%;background: #FFF">
+                                        <thead>
+                                            <tr>
+                                                <th></th>
+                                                <th></th>
+                                                <th class="text-right">Records</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="f in data_fields">
+                                                <td style="width:10%"><input type="checkbox"/></td>
+                                                <td style="width:65%">{{f.name}}</td>
+                                                <td style="width:25%" class="text-right">{{f.records}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                            </div>
+                            <div class="col-md-5" >
+                                <div class="row">
+                                    <div class="col-md-1" style="padding-top: 100px">
+                                        <input type="checkbox" />
+                                    </div>
+                                    <div style="background: #FFF;padding-left: 0px" class="col-md-11">
+                                        <nvd3 options="bar_options" data="bar_data"></nvd3>
+                                    </div>
+                                </div>
+                                <div class="row spacer20">
+                                    <div class="col-md-1" style="padding-top: 100px">
+                                        <input type="checkbox" />
+                                    </div>
+                                    <div style="background: #FFF;padding-left: 0px" class="col-md-11">
+                                        <nvd3 options="line_options" data="line_data"></nvd3>
+                                    </div>
+                                </div>
+                                <div class="row spacer20">
+                                    <div class="col-md-1" style="padding-top: 100px">
+                                        <input type="checkbox" />
+                                    </div>
+                                    <div style="background: #FFF;padding-left: 0px" class="col-md-11">
+                                        <nvd3 options="bar_options2" data="bar_data2"></nvd3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="spacer5 row">
+                            <div class="col-md-6">
+                                <button type="button" class="btn btn-grey">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn btn-grey">Cancel</button>
+                            </div>
+                            <div class="col-md-6" style="padding-left: 38px">
+                                <button type="button" class="btn btn-grey">Save</button>&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn btn-grey">Append</button>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 <div class="tab-pane " ng-class="isActive('save')" >
+                    <div class="tab-container row">
+                        <div class="row ">
+                            <div class="col-md-8">
+                                <p>Select a file to view previously saved data visualizations.</p>
+                            </div>
+                            <div class="col-md-4 text-right">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" >
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default " type="button" >
+                                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row spacer20">
+                            <div class="col-md-7" style="background: #FFF">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Filename</th>
+                                            <th>Saved<br />Visualizations</th>
+                                            <th>Previously<br />Appended</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody ng-repeat="f in save_files">
+                                        <tr >
+                                            <td rowspan="{{f.saved.length + 1}}">{{f.date}}</td>
+                                            <td rowspan="{{f.saved.length + 1}}">{{f.name}}</td>
 
+                                        </tr>
+                                        <tr ng-repeat="s in f.saved">
+                                            <td>{{s.visualization}}</td>
+                                            <td>{{s.appended ? "YES" : "NO"}}</td>
+                                        </tr >
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-5">
+                                <div class="row">
+                                    <div class="col-md-1" style="padding-top: 100px">
+                                        <input type="checkbox" />
+                                    </div>
+                                    <div style="background: #FFF;padding-left: 0px" class="col-md-11">
+                                        <nvd3 options="bar_options" data="bar_data"></nvd3>
+                                    </div>
+                                </div>
+                                <div class="row spacer20">
+                                    <div class="col-md-1" style="padding-top: 100px">
+                                        <input type="checkbox" />
+                                    </div>
+                                    <div style="background: #FFF;padding-left: 0px" class="col-md-11">
+                                        <nvd3 options="line_options" data="line_data"></nvd3>
+                                    </div>
+                                </div>
+                                <div class="row spacer20">
+                                    <div class="col-md-1" style="padding-top: 100px">
+                                        <input type="checkbox" />
+                                    </div>
+                                    <div style="background: #FFF;padding-left: 0px" class="col-md-11">
+                                        <nvd3 options="bar_options2" data="bar_data2"></nvd3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
