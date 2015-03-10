@@ -1,6 +1,6 @@
 <div class="row">
 
-    <div class="col-md-11"><h3>Account</h3>
+    <div class="col-md-11"><h3>Visualization</h3>
 
         <!-- tabs left -->
         <div class="tabbable tabs-left">
@@ -187,8 +187,8 @@
                             </div>
                         </div>
                         <div class="row spacer20">
-                            <div class="col-md-7" style="background: #FFF">
-                                <table class="table table-bordered">
+                            <div class="col-md-7" >
+                                <table class="table table-bordered" style="background: #FFF">
                                     <thead>
                                         <tr>
                                             <th>Date</th>
@@ -221,7 +221,7 @@
                                 </div>
                                 <div class="row spacer20">
                                     <div class="col-md-1" style="padding-top: 100px">
-                                        <input type="checkbox" />
+                                        <input type="checkbox" checked="checked" />
                                     </div>
                                     <div style="background: #FFF;padding-left: 0px" class="col-md-11">
                                         <nvd3 options="line_options" data="line_data"></nvd3>
@@ -229,12 +229,21 @@
                                 </div>
                                 <div class="row spacer20">
                                     <div class="col-md-1" style="padding-top: 100px">
-                                        <input type="checkbox" />
+                                        <input type="checkbox"  checked="checked" />
                                     </div>
                                     <div style="background: #FFF;padding-left: 0px" class="col-md-11">
                                         <nvd3 options="bar_options2" data="bar_data2"></nvd3>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="spacer10 row">
+                            <div class="col-md-7">
+                                <button type="button" class="btn btn-grey">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn btn-grey">Cancel</button>
+                            </div>
+                            <div class="col-md-5" style="padding-left: 38px">
+                                <button type="button" class="btn btn-grey">Append</button>&nbsp;&nbsp;&nbsp;
                             </div>
                         </div>
                     </div>

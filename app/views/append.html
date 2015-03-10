@@ -1,1 +1,177 @@
-<p>This is the append view.</p>
+<div class="row">
+
+    <div class="col-md-11"><h3>Append</h3>
+
+        <!-- tabs left -->
+        <div class="tabbable tabs-left">
+            <ul class="nav nav-tabs">
+                <li ng-class="isActive('data')"><a href="#/append?type=data" style="font-size: 16px" data-toggle="tab">Data Append</a></li>
+                <li ng-class="isActive('reverse')"><a href="#/append?type=reverse" style="font-size: 16px" data-toggle="tab">Reverse Append</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane " ng-class="isActive('data')" >
+                    <div class="tab-container row">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <p style="font-size: 20px;color:grey">File Selected</p>
+                                <p style="color:#a8d242">{{append_file.name}}<br/>
+                                    {{append_file.size}}</p>
+                                <div class="spacer10">
+                                    Select/Change file for data append.
+                                </div>
+                                <div class="spacer5">
+                                    <button type="button" class="btn btn-grey">Browse</button>
+                                </div>
+                                <hr style="border-color: #CCC;border-width: 1px 0px 0px; margin-right:500px;">
+                                <div class="spacer5">
+                                    <p>Select list of fields for data append.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-7">
+                                <table class="table table-bordered" style="background: #FFF">
+                                    <thead>
+                                        <tr><td>&nbsp;</td><td>&nbsp;</td><td class="text-right">Record Count</td></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-repeat="f in append_fields">
+                                            <td style="width: 10%">
+                                                <input type="checkbox" ng-if="f.checked == true" checked="checked" />
+                                                <input type="checkbox" ng-if="f.checked == false" />
+                                            </td>
+                                            <td style="width: 40%">{{f.name}}</td>
+                                            <td class="text-right">{{f.count}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-5" style="">
+                                <div class="bg-blue" style="width:180px;
+                                                            height: 120px;
+                                                            margin-top: 250px;
+                                                            margin-left: 50px;
+                                                            color:#FFF;
+                                                            padding-top: 10px;
+                                                            padding-left: 15px;">
+                                    <p style="font-size: 18px">Data Append Cost</p>
+                                    <h1>$12,400</h1>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <button type="button" class="btn btn-grey">Calculate</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn btn-grey">Cancel</button>
+                            </div>
+                            <div class="col-md-5" style="padding-left: 65px">
+                                <button type="button" class="btn btn-grey">Payment</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane " ng-class="isActive('reverse')" >
+                    <div class="tab-container row">
+                        <div class="row ">
+                            <div class="col-md-8">
+                                <p>Select one or more files for reverse append.<strong>Please note:</strong>
+                                <br />If the file has not yet been uploadded, use the File Tab to<br />upload the file.
+                                </p>
+                            </div>
+                            <div class="col-md-4 text-right">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" >
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default " type="button" >
+                                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row spacer10">
+                            <div class="col-md-12">
+                                <button type="button" class="btn btn-grey">Browse</button>
+                            </div>
+                        </div>
+                        <div class="row spacer20">
+                            <div class="col-md-8">
+                                <p style="font-size: 20px;color:grey">File Selected</p>
+                                <div class="spacer10">
+                                    Select files and list of fields for reverse append.
+                                </div>
+                                <div class="spacer10">
+                                    <table class="table table-bordered" style="background: #FFF">
+                                        <thead>
+                                            <tr>
+                                                <td>&nbsp;</td>
+                                                <td>&nbsp;</td>
+                                                <td style="background: gray;color: #FFF">Email</td>
+                                                <td style="background: gray;color: #FFF">Name</td>
+                                                <td style="background: gray;color: #FFF">Address</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="f in reverse_files">
+                                                <td>
+                                                    <input type="checkbox" ng-if="f.checked == true" checked="checked" />
+                                                    <input type="checkbox" ng-if="f.checked == false"  />
+                                                </td>
+                                                <td>
+                                                    <p>{{f.name}}</p>
+                                                    <p style="color: #a8d242;margin-bottom: 2px">{{f.size}}</p>
+                                                    <p style="color: #a8d242;margin-bottom: 2px">{{f.uploaded_time}}</p>
+                                                </td>
+                                                <td ng-if="f.email_checked == null">&nbsp;</td>
+                                                <td ng-if="f.email_checked != null && f.email_checked == true">
+                                                    <input type="checkbox" checked="checked" />
+                                                </td>
+                                                <td ng-if="f.email_checked != null && f.email_checked == false">
+                                                    <input type="checkbox"  />
+                                                </td>
+                                                <td ng-if="f.name_checked == null">&nbsp;</td>
+                                                <td ng-if="f.name_checked != null && f.name_checked == true">
+                                                    <input type="checkbox" checked="checked" />
+                                                </td>
+                                                <td ng-if="f.name_checked != null && f.name_checked == false">
+                                                    <input type="checkbox" />
+                                                </td>
+                                                <td ng-if="f.address_checked == null">&nbsp;</td>
+                                                <td ng-if="f.address_checked != null && f.address_checked == true">
+                                                    <input type="checkbox" checked="checked" />
+                                                </td>
+                                                <td ng-if="f.address_checked != null && f.address_checked == false">
+                                                    <input type="checkbox" />
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="bg-blue" style="width:200px;
+                                                            height: 120px;
+                                                            margin-top: 260px;
+                                                            margin-left: 0px;
+                                                            color:#FFF;
+                                                            padding-top: 10px;
+                                                            padding-left: 15px;">
+                                    <p style="font-size: 18px">Reverse Append Cost</p>
+                                    <h1>$7,800</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row spacer10">
+                            <div class="col-md-8">
+                                <button type="button" class="btn btn-grey">Calculate</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn btn-grey">Cancel</button>
+                            </div>
+                            <div class="col-md-4" style="padding-left: 15px">
+                                <button type="button" class="btn btn-grey">Payment</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
