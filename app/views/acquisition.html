@@ -1,1 +1,179 @@
-<p>This is the acquisition view.</p>
+<div class="row">
+    <div class="col-md-11"><h3>Acquisition</h3>
+        <div class="tabbable tabs-left">
+            <ul class="nav nav-tabs">
+                <li ng-class="isActive('model')"><a href="#/acquisition?type=model" data-toggle="tab">Look-alike Modeling</a></li>
+                <li ng-class="isActive('segment')"><a href="#/acquisition?type=segment" data-toggle="tab">Defined Segments</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane " ng-class="isActive('model')" >
+                    <div class="tab-container row">
+                        <div class="row ">
+                            <div class="col-md-8">
+                                <p>Select a file for look-alike modeling. <strong>Please note:</strong>If the file<br/>
+                                    has not yet been uploaded, use the File Tab to upload the file.
+                                </p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" >
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default " type="button" >
+                                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row spacer20">
+                            <div class="col-md-12">
+                                <button type="button" class="btn btn-grey">Browse</button>
+                            </div>
+                        </div>
+                        <div class="row spacer40">
+                            <div class="col-md-12">
+                                <p style="font-size: 22px; color:grey">File List</p>
+                            </div>
+                        </div>
+                        <div class="row spacer10">
+                            <div class="col-md-7">
+                                <div class="row">
+                                    <p>Select a file to be used for look-alike modeling.</p>
+                                </div>
+                                <div class="row">
+                                    <table class="table table-bordered table-striped" style="background: #FFFFFF">
+                                        <tbody>
+                                            <tr ng-repeat="f in file_list">
+                                                <td>
+                                                    <input type="checkbox" ng-if="f.checked == true" checked="checked" />
+                                                    <input type="checkbox" ng-if="f.checked == false" />
+                                                </td>
+                                                <td>
+                                                    <p>{{f.name}}</p>
+                                                    <p style="color: #a8d242;margin-bottom: 2px">{{f.size}}</p>
+                                                    <p style="color: #a8d242;margin-bottom: 2px">{{f.uploaded}}</p>
+
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="col-md-4 span-md-1">
+                                <div class="bg-blue" style="width:200px;
+                                                            height: 120px;
+                                                            margin-top: 10px;
+                                                            margin-left: 80px;
+                                                            color:#FFF;
+                                                            padding-top: 5px;
+                                                            padding-left: 15px;">
+                                    <h1>2.8 Mil</h1>
+                                    <p style="font-size: 20px">Records</p>
+                                </div>
+                                <div class="bg-green" style="width:200px;
+                                                            height: 140px;
+                                                            margin-top: 33px;
+                                                            margin-left: 80px;
+                                                            color:#FFF;
+                                                            padding-top: 10px;
+                                                            padding-left: 15px;">
+                                    <p style="font-size: 20px">Email Acquisition Cost</p>
+                                    <h1>$9,500</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row spacer10">
+                            <div class="col-md-8">
+                                <button type="button" class="btn btn-grey">Calculate</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn btn-grey">Cancel</button>
+                            </div>
+                            <div class="col-md-4" style="padding-left: 15px">
+                                <button type="button" class="btn btn-grey">Payment</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" ng-class="isActive('segment')">
+                    <div class="tab-container row">
+                        <div class="row ">
+                            <div class="col-md-7" style="margin-left: 10px">
+                                <div class="row">
+                                    <p>Build the segment by selecting the relevant fields, values and operators.
+                                    </p>
+                                </div>
+
+                                <div class="row spacer10">
+                                    <div class="col-md-2 col-md-offset-1">Field</div>
+                                    <div class="col-md-4">
+                                        <select>
+                                            <option value="1">Occupation</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row spacer10">
+                                    <div class="col-md-2 col-md-offset-1">Operator</div>
+                                    <div class="col-md-4">
+                                        <select >
+                                            <option value="1">Occupation</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row spacer10">
+                                    <div class="col-md-2  col-md-offset-1">Value</div>
+                                    <div class="col-md-4">
+                                        <select>
+                                            <option value="1">Occupation</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row spacer20">
+                                    <div class="col-md-offset-3 col-md-2 spacer5">
+                                        <select>
+                                            <option value="and">AND</option>
+                                            <option value="or">OR</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-2" style="margin-left: 20px">
+                                        <button type="button" class="btn btn-grey">Add</button>
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row spacer40">
+                                    <div class="spacer40">
+                                        <p style="font-size: 22px; color: grey">Segment Name</p>
+                                    </div>
+                                </div>
+                                <div class="row spacer5">
+                                    <input type="text" value="Women Health Professionals" style="width:300px" />
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="row">
+                                    <p style="font-size: 22px;color: grey">Saved Segments</p>
+                                </div>
+                                <div class="row spacer5" style="padding-right:20px">
+                                    <table class="table table-bordered" style="background: #FFF;font-size: 11px">
+                                        <thead>
+                                            <tr>
+                                                <th style="padding:3px" class="bg-grey">Date</th>
+                                                <th style="padding:3px" class="bg-grey">Segment Name</th>
+                                                <th style="padding:3px" class="bg-grey">Count</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr ng-repeat="s in saved_segments">
+                                                <td style="padding:4px">{{s.Date}}</td>
+                                                <td style="padding:4px">{{s.name}}</td>
+                                                <td style="padding:4px" class="text-right">{{s.Count}}</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

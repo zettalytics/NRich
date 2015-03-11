@@ -288,3 +288,8 @@ body {
 .bg-blue {
     background: #3c97ac;
 }
+
+.bg-grey {
+    background: #666666;
+    color: #FFF
+}
