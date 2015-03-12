@@ -70,6 +70,6 @@ angular
         controller: 'AccountCtrl'
       })
       .otherwise({
-        redirectTo: '/help'
+        redirectTo: '/account'
       });
   });

@@ -1,1 +1,243 @@
-<p>This is the three view.</p>
+<div class="row">
+    <div class="col-md-11"><h3>3<sup>rd</sup> Party</h3><br/>
+        <div class="tabbable tabs-left">
+            <ul class="nav nav-tabs">
+                <li ng-class="isActive('media')" class="text-right"><a href="#/three?type=media" data-toggle="tab">&nbsp;&nbsp;&nbsp;Media Buying</a></li>
+                <li ng-class="isActive('cookie')" class="text-right"><a href="#/three?type=cookie" data-toggle="tab">Cookie Matching</a></li>
+                <li ng-class="isActive('mobile')" class="text-right"><a href="#/three?type=mobile" data-toggle="tab">Mobile ID Matching</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane " ng-class="isActive('media')" >
+                    <div class="tab-container row">
+                        <h2>Coming soon...</h2>
+                    </div>
+                </div>
+                <div class="tab-pane " ng-class="isActive('cookie')" >
+                    <div class="tab-container row">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <p>Select one or more files for cookie matching. <strong>Please note:</strong><br />
+                                    If the file has not yet been uploaded, use the File Tab to upload the file.
+                                </p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" >
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default " type="button" >
+                                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-11">
+                                <button type="button" class="btn btn-grey">Browse</button>
+                            </div>
+                        </div>
+                        <div class="row spacer40">
+                            <div class="col-md-11">
+                                <p style="font-size: 22px; color:grey">File List</p>
+                            </div>
+                            <div class="col-md-11">
+                                <p>Select files for cookie matching.</p>
+                            </div>
+                            <div class="col-md-7">
+                                <table class="table table-bordered table-striped" style="background: #FFF">
+                                    <tbody>
+                                        <tr ng-repeat="f in cookie_files">
+                                            <td>
+                                                <input type="checkbox" ng-if="f.checked == true" checked="checked" />
+                                                <input type="checkbox" ng-if="f.checked == false" />
+                                            </td>
+                                            <td>
+                                                <p>{{f.name}}</p>
+                                                <p style="color: #a8d242;margin-bottom: 2px">{{f.size}}</p>
+                                                <p style="color: #a8d242;margin-bottom: 2px">{{f.uploaded}}</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="bg-blue" style="width:200px;
+                                                            height: 120px;
+                                                            margin-top: 0px;
+                                                            margin-left: 80px;
+                                                            color:#FFF;
+                                                            padding-top: 2px;
+                                                            padding-left: 15px;">
+                                    <h1>1.8 Mil</h1>
+                                    <p style="font-size: 20px">Records</p>
+                                </div>
+                                <div class="bg-green" style="width:200px;
+                                                            height: 140px;
+                                                            margin-top: 13px;
+                                                            margin-left: 80px;
+                                                            color:#FFF;
+                                                            padding-top: 10px;
+                                                            padding-left: 15px;">
+                                    <p style="font-size: 20px">Cookie Matching Cost</p>
+                                    <h1>$12,000</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row spacer10">
+                            <div class="col-md-7">
+                                <button type="button" class="btn btn-grey">Calculate</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn btn-grey">Cancel</button>
+                            </div>
+                            <div class="col-md-4">
+                                <button type="button" class="btn btn-grey" ng-click="toggleModal()" style="margin-left: 80px">Payment</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane " ng-class="isActive('mobile')" >
+                    <div class="tab-container row">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <p>Select one or more files for Mobile ID matching. <strong>Please note:</strong><br />
+                                    If the file has not yet been uploaded, use the File Tab to upload the file.
+                                </p>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" >
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-default " type="button" >
+                                            <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-11">
+                                <button type="button" class="btn btn-grey">Browse</button>
+                            </div>
+                        </div>
+                        <div class="row spacer40">
+                            <div class="col-md-11">
+                                <p style="font-size: 22px; color:grey">File List</p>
+                            </div>
+                            <div class="col-md-11">
+                                <p>Select files for cookie matching.</p>
+                            </div>
+                            <div class="col-md-7">
+                                <table class="table table-bordered table-striped" style="background: #FFF">
+                                    <tbody>
+                                    <tr ng-repeat="f in mobile_files">
+                                        <td>
+                                            <input type="checkbox" ng-if="f.checked == true" checked="checked" />
+                                            <input type="checkbox" ng-if="f.checked == false" />
+                                        </td>
+                                        <td>
+                                            <p>{{f.name}}</p>
+                                            <p style="color: #a8d242;margin-bottom: 2px">{{f.size}}</p>
+                                            <p style="color: #a8d242;margin-bottom: 2px">{{f.uploaded}}</p>
+
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="bg-blue" style="width:200px;
+                                                            height: 120px;
+                                                            margin-top: 0px;
+                                                            margin-left: 80px;
+                                                            color:#FFF;
+                                                            padding-top: 2px;
+                                                            padding-left: 15px;">
+                                    <h1>250K</h1>
+                                    <p style="font-size: 20px">Records</p>
+                                </div>
+                                <div class="bg-green" style="width:200px;
+                                                            height: 140px;
+                                                            margin-top: 13px;
+                                                            margin-left: 80px;
+                                                            color:#FFF;
+                                                            padding-top: 10px;
+                                                            padding-left: 15px;">
+                                    <p style="font-size: 20px">Mobile ID Matching Cost</p>
+                                    <h1>$22,800</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row spacer10">
+                            <div class="col-md-7">
+                                <button type="button" class="btn btn-grey">Calculate</button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn btn-grey">Cancel</button>
+                            </div>
+                            <div class="col-md-4">
+                                <button type="button" class="btn btn-grey" style="margin-left: 80px" ng-click="toggleModal()" >Payment</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<modal title="Confirm Payment Information" visible="showModal" >
+    <div class="row">
+        <div class="col-md-8">
+            <p>Please confirm the following credit card information.</p>
+        </div>
+    </div>
+    <div class="row spacer10">
+        <div class="col-md-4 spacer5">
+            <label>Credit Card Type</label>
+        </div>
+        <div class="col-md-5">
+            <div class="cc-item-visa" style="border-width: 0px" />
+        </div>
+    </div>
+    <form role="form">
+        <div class="form-group">
+            <div class="row spacer20">
+                <div class="col-md-4 spacer5">
+                    <label>Credit Card Number</label>
+                </div>
+                <div class="col-md-5">
+                    <input type="text" class="form-control" id="email" placeholder="Enter email" value="XXXXXXXXXXX4985" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-4 spacer5">
+                    <label >Expiry Date</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" value="Mar" />
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" value="2017" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-4 spacer5">
+                    <label >Validation Code</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="password" class="form-control" value="1234" />&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+        </div>
+
+    </form>
+    <div class="row spacer20">
+        <div class="col-md-2 col-md-offset-2">
+            <button type="submit" class="btn btn-grey">Pay Now</button>
+        </div>
+        <div class="col-md-4">
+            <button type="button" class="btn btn-grey" data-dismiss="modal">Cancel</button>
+        </div>
+    </div>
+</modal>

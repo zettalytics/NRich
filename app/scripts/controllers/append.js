@@ -101,5 +101,9 @@ angular.module('nrichApp')
                 "name_checked": true,
                 "address_checked": true
             }
-        ]
+        ];
+        $scope.showModal = false;
+        $scope.toggleModal = function(){
+            $scope.showModal = !$scope.showModal;
+        };
   });

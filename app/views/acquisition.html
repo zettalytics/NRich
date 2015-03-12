@@ -88,7 +88,7 @@
                                 <button type="button" class="btn btn-grey">Cancel</button>
                             </div>
                             <div class="col-md-4" style="padding-left: 15px">
-                                <button type="button" class="btn btn-grey">Payment</button>
+                                <button type="button" class="btn btn-grey" ng-click="toggleModal()" >Payment</button>
                             </div>
                         </div>
                     </div>
@@ -138,13 +138,21 @@
                                     </div>
                                 </div>
                                 <br />
-                                <div class="row spacer40">
-                                    <div class="spacer40">
-                                        <p style="font-size: 22px; color: grey">Segment Name</p>
-                                    </div>
+                                <div class="row spacer20">
+                                    <p style="font-size: 22px; color: grey">Segment Name</p>
                                 </div>
                                 <div class="row spacer5">
                                     <input type="text" value="Women Health Professionals" style="width:300px" />
+                                </div>
+                                <div class="row spacer10">
+                                    <p style="font-size: 22px;color: grey">Segment Criteria</p>
+                                </div>
+                                <div class="row spacer5">
+                                    <div id="textarea_segment" >
+                                        Occupation is (Professional, Health Services)
+                                        AND
+                                        Gender is (female)
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
@@ -162,13 +170,51 @@
                                         </thead>
                                         <tbody>
                                             <tr ng-repeat="s in saved_segments">
-                                                <td style="padding:4px">{{s.Date}}</td>
-                                                <td style="padding:4px">{{s.name}}</td>
-                                                <td style="padding:4px" class="text-right">{{s.Count}}</td>
+                                                <td style="padding:2px">{{s.Date}}</td>
+                                                <td style="padding:2px">{{s.name}}</td>
+                                                <td style="padding:2px" class="text-right">{{s.Count}}</td>
                                             </tr>
                                         </tbody>
                                     </table>
                                 </div>
+                                <div class="row" style="margin-top: -10px">
+                                    <div class="bg-blue" style="width:200px;
+                                                            height: 100px;
+                                                            margin-top: 0px;
+                                                            margin-left: 0px;
+                                                            color:#FFF;
+                                                            padding-top: 5px;
+                                                            padding-left: 15px;">
+                                        <p style="font-size: 32px"><strong>967K</strong></p>
+                                        <p style="font-size: 20px">Records</p>
+                                    </div>
+                                    <div class="bg-green" style="width:200px;
+                                                            height: 120px;
+                                                            margin-top: 10px;
+                                                            margin-left: 0px;
+                                                            color:#FFF;
+                                                            padding-top: 5px;
+                                                            padding-left: 15px;">
+                                        <p style="font-size: 20px">Email Acquisition Cost</p>
+                                        <p style="font-size: 32px"><strong>$9,500</strong></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row spacer20">
+                            <div class="col-md-7"  style="margin-left: -5px">
+                                <button type="button" class="btn btn-grey">Calculate</button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn btn-grey">Save</button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn btn-grey">Cancel</button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                            </div>
+                            <div class="col-md-4">
+                                <button type="button" class="btn btn-grey"  ng-click="toggleModal()">Payment</button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
                             </div>
                         </div>
                     </div>
@@ -177,3 +223,62 @@
         </div>
     </div>
 </div>
+<modal title="Confirm Payment Information" visible="showModal" >
+    <div class="row">
+        <div class="col-md-8">
+            <p>Please confirm the following credit card information.</p>
+        </div>
+    </div>
+    <div class="row spacer10">
+        <div class="col-md-4 spacer5">
+            <label>Credit Card Type</label>
+        </div>
+        <div class="col-md-5">
+            <div class="cc-item-visa" style="border-width: 0px" />
+        </div>
+    </div>
+    <form role="form">
+        <div class="form-group">
+            <div class="row spacer20">
+                <div class="col-md-4 spacer5">
+                    <label>Credit Card Number</label>
+                </div>
+                <div class="col-md-5">
+                    <input type="text" class="form-control" id="email" placeholder="Enter email" value="XXXXXXXXXXX4985" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-4 spacer5">
+                    <label >Expiry Date</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" value="Mar" />
+                </div>
+                <div class="col-md-2">
+                    <input type="text" class="form-control" value="2017" />
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="row">
+                <div class="col-md-4 spacer5">
+                    <label >Validation Code</label>
+                </div>
+                <div class="col-md-2">
+                    <input type="password" class="form-control" value="1234" />&nbsp;&nbsp;&nbsp;
+                </div>
+            </div>
+        </div>
+
+    </form>
+    <div class="row spacer20">
+        <div class="col-md-2 col-md-offset-2">
+            <button type="submit" class="btn btn-grey" >Pay Now</button>
+        </div>
+        <div class="col-md-4">
+            <button type="button" class="btn btn-grey" data-dismiss="modal">Cancel</button>
+        </div>
+    </div>
+</modal>

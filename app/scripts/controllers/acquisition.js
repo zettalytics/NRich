@@ -87,5 +87,10 @@ angular.module('nrichApp')
                 "Date": "27-May-14",
                 "Count": "559,603"
             }
-        ]
+        ];
+        $scope.showModal = false;
+        $scope.toggleModal = function(){
+            $scope.showModal = !$scope.showModal;
+        };
+
   });
