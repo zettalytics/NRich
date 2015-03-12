@@ -1,1 +1,78 @@
-<p>This is the deploy view.</p>
+<div class="row">
+    <div class="col-md-11"><h3>Deployment</h3><br/>
+        <div class="tabbable tabs-left">
+            <ul class="nav nav-tabs">
+                <li ng-class="isActive('campaign')" class="text-right"><a href="#/deploy?type=campaign" data-toggle="tab">&nbsp;&nbsp;Deploy Email</a></li>
+                <li ng-class="isActive('list')" class="text-right"><a href="#/deploy?type=list" data-toggle="tab">Manage List</a></li>
+                <li ng-class="isActive('insights')" class="text-right"><a href="#/deploy?type=insights" data-toggle="tab">Response Insights</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane " ng-class="isActive('campaign')" >
+                    <div class="tab-container row">
+                        <div class="row spacer5">
+                            <div class="col-md-6 ">
+                                <p style="font-size: 22px; color:grey">Create New Campaign</p>
+                            </div>
+                            <div class="col-md-6">
+                                <ol class="breadcrumb">
+                                    <li class="active">1.Template</li>
+                                    <li>2.Target</li>
+                                    <li>3.Content</li>
+                                    <li>4.Schedule</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-10">
+                                <input type="text" style="width: 400px" />
+                            </div>
+                        </div>
+                        <div class="row spacer20">
+                            <div class="col-md-5">
+                                <button type="button" class="btn btn-grey">Create</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <hr style="border-width: 1px; border-color:#c9c9c9" />
+                            </div>
+                        </div>
+                        <div class="row spacer5">
+                            <div class="col-md-5">
+                                <p style="font-size: 14px">Select a Template</p>
+                            </div>
+                        </div>
+                        <div class="row spacer5">
+                            <div class="col-md-3" style="margin-left: 20px">
+                                <div ng-click="itemClicked(0)" class="deploy_template" ng-class="{ 'deploy_template_selected': 0 == selectedIndex }">
+                                    <img src="http://app.simplyengage.com/sites/default/files/16/email_template/t174.png?r=397959" height="248" width="218">
+
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-md-offset-1">
+                                <div ng-click="itemClicked(1)" class="deploy_template" ng-class="{ 'deploy_template_selected': 1 == selectedIndex }">
+                                    <img src="http://app.simplyengage.com/sites/default/files/16/email_template/t175.png?r=397959" height="248" width="218">
+
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row spacer20">
+                            <div class="col-md-10">
+                                <button type="button" class="btn btn-grey">Select</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" ng-class="isActive('list')" >
+                    <div class="tab-container row">
+                    </div>
+                </div>
+                <div class="tab-pane" ng-class="isActive('insights')" >
+                    <div class="tab-container row">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

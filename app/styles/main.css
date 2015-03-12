@@ -91,6 +91,7 @@ body {
 .btn-grey{
     color: #FFF;
     background-color: #a3a3a3;
+    width: 100px;
 }
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
@@ -250,11 +251,17 @@ body {
     float:left;
     margin-left:5px;
     border-style: solid;
-    border-width: thin;
+    border-width: 0px;
     border-color: transparent;
     background-image: url("../images/cc.png");
     width: 45px;
     height:25px
+}
+
+.deploy_template {
+    cursor: pointer;
+    width:220px;
+    height: 250px
 }
 .cc-item-mastro{
     background-position: 197px ;
@@ -275,6 +282,7 @@ body {
 .cc-item-diner{
     background-position: 45px ;
 }
+.deploy_template_selected,
 .credit-card-selected {
     border-style: solid;
     border-width: thin;
@@ -294,7 +302,7 @@ body {
 
 .bg-grey {
     background: #666666;
-    color: #FFF
+    color: #FFF;
 }
 
 #textarea_segment {
@@ -309,4 +317,14 @@ body {
     resize: none;
     width: 300px;
     background: #ffffff;
+}
+
+.breadcrumb {
+    background: #F0F3E5;
+}
+
+.breadcrumb li.active{
+    background: #a8d242;
+    color: #FFF;
+    padding:5px
 }

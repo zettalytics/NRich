@@ -2,8 +2,8 @@
     <div class="col-md-11"><h3>Account</h3>
         <div class="tabbable tabs-left">
             <ul class="nav nav-tabs">
-                <li ng-class="isActive('upload')"><a href="#/file?type=upload" data-toggle="tab">File <br/>Upload</a></li>
-                <li ng-class="isActive('export')"><a href="#/file?type=export" data-toggle="tab">File <br/>Export</a></li>
+                <li ng-class="isActive('upload')"><a href="#/file?type=upload" data-toggle="tab" class="text-right">File <br/>Upload</a></li>
+                <li ng-class="isActive('export')"><a href="#/file?type=export" data-toggle="tab" class="text-right">File <br/>Export</a></li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane " ng-class="isActive('upload')" >
@@ -21,22 +21,31 @@
                         </div>
                         <div class="row spacer20">
                             <div class="col-md-12">
-                                <p style="font-size: 22px">File List</p>
+                                <p style="font-size: 22px;color: grey">File List</p>
                             </div>
                         </div>
                         <div class="row spacer10">
                             <div class="col-md-12">
-                                <table class="table-bordered table">
+                                <table class="table table-bordered table-striped" style="background: #FFF">
                                     <tbody>
                                         <tr ng-repeat="f in files">
-                                            <td width="40%">
+                                            <td width="30%">
                                                 {{f.name}}
                                             </td>
+                                            <td class="text-right" width="10%" ng-if="f.size >= 1000000">
+                                                {{f.size / 1000000 | number:0}} MB
+                                            </td>
+                                            <td class="text-right" width="10%" ng-if="f.size > 1000 && f.size < 1000000">
+                                                {{f.size / 1000 | number:0}} KB
+                                            </td>
+                                            <td class="text-right" width="10%" ng-if="f.size <= 1000">
+                                                {{f.size | number:0}} bytes
+                                            </td>
                                             <td width="40%">
-                                                Progress...
+                                                ready...
                                             </td>
                                             <td width="10%">
-                                                100%
+                                                0%
                                             </td>
                                             <td>
                                                 <a href="#" >Remove</a>
@@ -46,7 +55,6 @@
                                 </table>
                             </div>
                         </div>
-                        <br/><br/><br/><br/>
                         <div class="row spacer30">
                             <div class="col-md-12">
                                 <button type="button" class="btn btn-grey">Submit</button>&nbsp;&nbsp;&nbsp;
@@ -79,7 +87,7 @@
                         </div>
                         <div class="row spacer10">
                             <div class="col-md-12">
-                                <table class="table-bordered table">
+                                <table class="table-bordered table table-striped" style="background: #FFF">
                                     <tbody>
                                     <tr ng-repeat="f in exportFiles">
                                         <td width="5%">
@@ -92,10 +100,15 @@
                                             <p style="color: #a8d242;margin-bottom: 2px">{{f.exported}}</p>
                                         </td>
                                         <td width="40%">
-                                            Progress...
+                                            <div>Status:{{f.status}}</div>
+                                            <div class="progress spacer20">
+                                                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="{{f.progress}}" aria-valuemin="0" aria-valuemax="100" style="width: {{f.progress}}%;" >
+                                                    {{f.progress}}%
+                                                </div>
+                                            </div>
                                         </td>
                                         <td width="10%">
-                                            100%
+                                            <p class="text-right">{{f.progress}}%</p>
                                         </td>
 
                                     </tr>

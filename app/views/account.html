@@ -5,9 +5,9 @@
         <!-- tabs left -->
         <div class="tabbable tabs-left">
             <ul class="nav nav-tabs">
-                <li ng-class="isActive('profile')"><a href="#/account?type=profile" data-toggle="tab">Profile Information</a></li>
-                <li ng-class="isActive('payment')"><a href="#/account?type=payment" data-toggle="tab">Payment Information</a></li>
-                <li ng-class="isActive('purchase')"><a href="#/account?type=purchase" data-toggle="tab">Purchase History</a></li>
+                <li ng-class="isActive('profile')"><a href="#/account?type=profile" data-toggle="tab" class="text-right">Profile Information</a></li>
+                <li ng-class="isActive('payment')"><a href="#/account?type=payment" data-toggle="tab" class="text-right">Payment Information</a></li>
+                <li ng-class="isActive('purchase')"><a href="#/account?type=purchase" data-toggle="tab" class="text-right">Purchase History</a></li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane " ng-class="isActive('profile')" >
@@ -159,95 +159,37 @@
                                     <tr>
                                         <th style="width: 5%" class="nosort" data-sortcolumn="3" data-sortkey="3-1">&nbsp;</th>
                                         <th style="width: 10%"  data-mainsort="1" data-firstsort="desc" class="nosort" data-sortcolumn="1" data-sortkey="1-1">Purchase Date</th>
-                                        <th style="width: 20%" class="nosort" data-sortcolumn="3" data-sortkey="3-1">Purchase Type</th>
-                                        <th style="width: 10%" class="nosort" data-sortcolumn="4" data-sortkey="4-1">List Size</th>
-                                        <th style="width: 10%" data-defaultsign="month" class="nosort" data-sortcolumn="5" data-sortkey="5-1">Payment Amount</th>
-                                        <th style="width: 20%" data-defaultsign="month" class="nosort" data-sortcolumn="5" data-sortkey="5-1">Payment Status</th>
-                                        <th style="width: 20%" data-defaultsign="month" class="nosort" data-sortcolumn="5" data-sortkey="5-1">Payment Method</th>
+                                        <th style="width: 30%" class="nosort" data-sortcolumn="3" data-sortkey="3-1">Purchase Type</th>
+                                        <th style="width: 12%" class="nosort text-center" data-sortcolumn="4" data-sortkey="4-1">List Size</th>
+                                        <th style="width: 15%" data-defaultsign="month" class="nosort" data-sortcolumn="5" data-sortkey="5-1">Payment Amount</th>
+                                        <th style="width: 15%" data-defaultsign="month" class="nosort" data-sortcolumn="5" data-sortkey="5-1">Payment Status</th>
+                                        <th style="width: 15%" data-defaultsign="month" class="nosort" data-sortcolumn="5" data-sortkey="5-1">Payment Method</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td data-value="Peter Jackson" class="sorted">&nbsp;</td>
-                                            <td data-value="10.44">&nbsp;</td>
-                                            <td data-value="2.95">&nbsp;</td>
-                                            <td data-value="54.21">&nbsp;</td>
-                                            <td data-value="67.6" class="">&nbsp;</td>
-                                            <td data-value="Peter Jackson" class="sorted">&nbsp;</td>
-                                            <td data-value="10.44">&nbsp;</td>
-                                        </tr>
-                                        <tr>
-                                            <td data-value="Peter Jackson" class="sorted">&nbsp;</td>
-                                            <td data-value="10.44">&nbsp;</td>
-                                            <td data-value="2.95">&nbsp;</td>
-                                            <td data-value="54.21">&nbsp;</td>
-                                            <td data-value="67.6" class="">&nbsp;</td>
-                                            <td data-value="Peter Jackson" class="sorted">&nbsp;</td>
-                                            <td data-value="10.44">&nbsp;</td>
-                                        </tr>                                        <tr>
-                                            <td data-value="Peter Jackson" class="sorted">&nbsp;</td>
-                                            <td data-value="10.44">&nbsp;</td>
-                                            <td data-value="2.95">&nbsp;</td>
-                                            <td data-value="54.21">&nbsp;</td>
-                                            <td data-value="67.6" class="">&nbsp;</td>
-                                            <td data-value="Peter Jackson" class="sorted">&nbsp;</td>
-                                            <td data-value="10.44">&nbsp;</td>
-                                        </tr>                                        <tr>
-                                            <td data-value="Peter Jackson" class="sorted">&nbsp;</td>
-                                            <td data-value="10.44">&nbsp;</td>
-                                            <td data-value="2.95">&nbsp;</td>
-                                            <td data-value="54.21">&nbsp;</td>
-                                            <td data-value="67.6" class="">&nbsp;</td>
-                                            <td data-value="Peter Jackson" class="sorted">&nbsp;</td>
-                                            <td data-value="10.44">&nbsp;</td>
-                                        </tr>                                        <tr>
-                                            <td data-value="Peter Jackson" class="sorted">&nbsp;</td>
-                                            <td data-value="10.44">&nbsp;</td>
-                                            <td data-value="2.95">&nbsp;</td>
-                                            <td data-value="54.21">&nbsp;</td>
-                                            <td data-value="67.6" class="">&nbsp;</td>
-                                            <td data-value="Peter Jackson" class="sorted">&nbsp;</td>
-                                            <td data-value="10.44">&nbsp;</td>
-                                        </tr>                                        <tr>
-                                            <td data-value="Peter Jackson" class="sorted">&nbsp;</td>
-                                            <td data-value="10.44">&nbsp;</td>
-                                            <td data-value="2.95">&nbsp;</td>
-                                            <td data-value="54.21">&nbsp;</td>
-                                            <td data-value="67.6" class="">&nbsp;</td>
-                                            <td data-value="Peter Jackson" class="sorted">&nbsp;</td>
-                                            <td data-value="10.44">&nbsp;</td>
-                                        </tr>                                        <tr>
-                                            <td data-value="Peter Jackson" class="sorted">&nbsp;</td>
-                                            <td data-value="10.44">&nbsp;</td>
-                                            <td data-value="2.95">&nbsp;</td>
-                                            <td data-value="54.21">&nbsp;</td>
-                                            <td data-value="67.6" class="">&nbsp;</td>
-                                            <td data-value="Peter Jackson" class="sorted">&nbsp;</td>
-                                            <td data-value="10.44">&nbsp;</td>
-                                        </tr>                                        <tr>
-                                            <td data-value="Peter Jackson" class="sorted">&nbsp;</td>
-                                            <td data-value="10.44">&nbsp;</td>
-                                            <td data-value="2.95">&nbsp;</td>
-                                            <td data-value="54.21">&nbsp;</td>
-                                            <td data-value="67.6" class="">&nbsp;</td>
-                                            <td data-value="Peter Jackson" class="sorted">&nbsp;</td>
-                                            <td data-value="10.44">&nbsp;</td>
-                                        </tr>                                        <tr>
-                                            <td data-value="Peter Jackson" class="sorted">&nbsp;</td>
-                                            <td data-value="10.44">&nbsp;</td>
-                                            <td data-value="2.95">&nbsp;</td>
-                                            <td data-value="54.21">&nbsp;</td>
-                                            <td data-value="67.6" class="">&nbsp;</td>
-                                            <td data-value="Peter Jackson" class="sorted">&nbsp;</td>
-                                            <td data-value="10.44">&nbsp;</td>
-                                        </tr>                                        <tr>
-                                            <td data-value="Peter Jackson" class="sorted">&nbsp;</td>
-                                            <td data-value="10.44">&nbsp;</td>
-                                            <td data-value="2.95">&nbsp;</td>
-                                            <td data-value="54.21">&nbsp;</td>
-                                            <td data-value="67.6" class="">&nbsp;</td>
-                                            <td data-value="Peter Jackson" class="sorted">&nbsp;</td>
-                                            <td data-value="10.44">&nbsp;</td>
+                                        <tr ng-repeat="h in purchase_history">
+                                            <td>
+                                                <input type="checkbox" ng-if="h.checked == true" checked="checked" />
+                                                <input type="checkbox" ng-if="h.checked == false" />
+                                            </td>
+                                            <td>
+                                                {{h.date}}
+                                            </td>
+                                            <td>
+                                                {{h.type}}
+                                            </td>
+                                            <td class="text-right">
+                                                {{h.size}}
+                                            </td>
+                                            <td class="text-right">
+                                                {{h.amount}}
+                                            </td>
+                                            <td>
+                                                {{h.status}}
+                                            </td>
+                                            <td>
+                                                {{h.method}}
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>

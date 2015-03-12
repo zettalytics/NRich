@@ -5,9 +5,9 @@
         <!-- tabs left -->
         <div class="tabbable tabs-left">
             <ul class="nav nav-tabs">
-                <li ng-class="isActive('match')"><a href="#/visualization?type=match" data-toggle="tab">Profile Information</a></li>
-                <li ng-class="isActive('data')"><a href="#/visualization?type=data" data-toggle="tab">Payment Information</a></li>
-                <li ng-class="isActive('save')"><a href="#/visualization?type=save" data-toggle="tab">Purchase History</a></li>
+                <li ng-class="isActive('match')"><a href="#/visualization?type=match" data-toggle="tab" class="text-right">Profile Information</a></li>
+                <li ng-class="isActive('data')"><a href="#/visualization?type=data" data-toggle="tab" class="text-right">Payment Information</a></li>
+                <li ng-class="isActive('save')"><a href="#/visualization?type=save" data-toggle="tab" class="text-right">Purchase History</a></li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane " ng-class="isActive('match')" >
@@ -34,7 +34,7 @@
                         </div>
                         <div class="row spacer10">
                             <div class="col-md-12" >
-                                <table class="table-bordered table" style="background: #FFFFFF">
+                                <table class="table-bordered table table-striped" style="background: #FFFFFF">
                                     <tbody>
                                     <tr ng-repeat="f in files">
                                         <td width="5%">

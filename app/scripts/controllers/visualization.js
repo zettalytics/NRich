@@ -117,7 +117,7 @@ angular.module('nrichApp')
         $scope.toggle = function() {
             $scope.hideVisual = !$scope.hideVisual;
         };
-        $scope.hideVisual = true;
+        $scope.hideVisual = false;
 
         var fields = new Array();
         var firstObj = new Object();

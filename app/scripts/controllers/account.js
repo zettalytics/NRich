@@ -77,4 +77,34 @@ angular.module('nrichApp')
         $scope.itemClicked = function ($index) {
             $scope.selectedIndex = $index;
         };
+
+        $scope.purchase_history = [
+            {
+                "checked": true,
+                "date": "15-Dec-14",
+                "type": "Data Append",
+                "size": "2,034,870",
+                "amount": "$30,000",
+                "status": "Invoiced",
+                "method": ""
+            },
+            {
+                "checked": true,
+                "date": "18-Nov-14",
+                "type": "Email Deployment",
+                "size": "145,334",
+                "amount": "$21,5500",
+                "status": "Paid",
+                "method": "Visa"
+            },
+            {
+                "checked": false,
+                "date": "22-Oct-14",
+                "type": "Email List Acquisition",
+                "size": "567,993",
+                "amount": "$25,000",
+                "status": "Paid",
+                "method": "Mastercard"
+            }
+        ]
     });
