@@ -60,8 +60,6 @@ angular.module('nrichApp')
                 "uploaded": "Uploaded on 12/24/2014 11:04"
             }
         ];
-        $scope.showModal = false;
-        $scope.toggleModal = function(){
-            $scope.showModal = !$scope.showModal;
-        };
+
+
     });

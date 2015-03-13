@@ -17,7 +17,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'angularFileUpload',
-    'nvd3'
+    'nvd3',
+     'mgcrea.ngStrap'
   ])
     .run(function($rootScope, $location, $cookieStore, $http) {
         $rootScope.getClass = function (path) {
@@ -29,6 +30,17 @@ angular
         };
 
         $rootScope.showToolBar = $location.path().indexOf("login") < 0;
+        /*
+        $rootScope.showModal = false;
+        $rootScope.toggleModal = function(){
+            $rootScope.showModal = !$rootScope.showModal;
+        };*/
+        $rootScope.modal = {
+            "title": "Confirm Payment Information",
+            "placement": "center",
+
+            "content": ""
+        };
 
         // keep user logged in after page refresh
         $rootScope.globals = $cookieStore.get('globals') || {};
