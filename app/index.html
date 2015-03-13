@@ -23,7 +23,8 @@
 
     <!-- Add your site or application content here -->
     <div class="header">
-      <div class="navbar navbar-default" role="navigation">
+
+      <div class="navbar navbar-default" role="navigation"  ng-show="showToolBar">
         <div class="container">
           <div class="navbar-header">
 
@@ -57,7 +58,7 @@
                   </li>
                   <li  class="logout">
                       <form class="navbar-form ng-pristine ng-valid">
-                          <button class="btn btn-dark" ng-click="signout()">Log out</button>
+                          <button class="btn btn-dark"  confirmed-click="logout()" ng-confirm-click="Are you sure you want to log out?">Log out</button>
                       </form>
                   </li>
                   <li ng-class="getClass('/help')">
@@ -75,9 +76,8 @@
 
     <div class="footer">
     <div class="container">
-        <div class="row">
+        <div class="row spacer40">
             <div class="col-md-12 text-right">
-
                 <p><span class="glyphicon glyphicon-envelope"></span> Email Predict</p>
             </div>
         </div>
@@ -131,6 +131,10 @@
         <script src="scripts/controllers/help.js"></script>
         <script src="scripts/controllers/account.js"></script>
         <script src="scripts/directives/payment_modal.js"></script>
+        <script src="scripts/services/authenticationservice.js"></script>
+        <script src="scripts/services/base64.js"></script>
+        <script src="scripts/controllers/login.js"></script>
+        <script src="scripts/directives/ngconfirmclick.js"></script>
         <!-- endbuild -->
 </body>
 </html>

@@ -19,13 +19,34 @@ angular
     'angularFileUpload',
     'nvd3'
   ])
-    .run(function($rootScope, $location) {
+    .run(function($rootScope, $location, $cookieStore, $http) {
         $rootScope.getClass = function (path) {
             if ($location.path().substr(0, path.length) == path) {
                 return "active"
             } else {
                 return ""
             }
+        };
+
+        $rootScope.showToolBar = $location.path().indexOf("login") < 0;
+
+        // keep user logged in after page refresh
+        $rootScope.globals = $cookieStore.get('globals') || {};
+        if ($rootScope.globals.currentUser) {
+            $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; // jshint ignore:line
+        }
+
+        $rootScope.$on('$locationChangeStart', function (event, next, current) {
+            // redirect to login page if not logged in
+            if ($location.path() !== '/login' && !$rootScope.globals.currentUser) {
+                $location.path('/login');
+                $rootScope.showToolBar = false;
+            }
+        });
+
+        $rootScope.logout = function () {
+            $location.path('/login');
+            $rootScope.showToolBar = false;
         }
     })
   .config(function ($routeProvider) {
@@ -68,6 +89,10 @@ angular
       .when('/account', {
         templateUrl: 'views/account.html',
         controller: 'AccountCtrl'
+      })
+      .when('/login', {
+        templateUrl: 'views/login.html',
+        controller: 'LoginCtrl'
       })
       .otherwise({
         redirectTo: '/account'
