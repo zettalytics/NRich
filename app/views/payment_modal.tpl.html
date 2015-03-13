@@ -1,0 +1,62 @@
+<div class="modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header" ng-show="title">
+                <button type="button" class="close" ng-click="$hide()">&times;</button>
+                <h4 class="modal-title" ng-bind-html="title"></h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <p>Please confirm the following credit card information.</p>
+                    </div>
+                </div>
+                <div class="row spacer10">
+                    <div class="col-md-4 spacer5">
+                        <label>Credit Card Type</label>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="cc-item-visa" style="border-width: 0px" ></div>
+                    </div>
+                </div>
+                <div class="row spacer20">
+                    <div class="col-md-4 spacer5">
+                        <label>Credit Card Number</label>
+                    </div>
+                    <div class="col-md-5">
+                        <input type="text" class="form-control" id="email" placeholder="Enter email" value="XXXXXXXXXXX4985" />
+                    </div>
+                </div>
+                <div class="row spacer10">
+                    <div class="col-md-4 spacer5">
+                        <label >Expiry Date</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="text" class="form-control" value="Mar" />
+                    </div>
+                    <div class="col-md-2" >
+                        <input type="text" class="form-control" value="2017" style="margin-left:-25px" />
+                    </div>
+                </div>
+                <div class="row spacer10">
+                    <div class="col-md-4 spacer5">
+                        <label >Validation Code</label>
+                    </div>
+                    <div class="col-md-2">
+                        <input type="password" class="form-control" value="1234" />&nbsp;&nbsp;&nbsp;
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="row spacer20">
+                    <div class="col-md-3 col-md-offset-2">
+                        <button type="submit" class="btn btn-grey" >Pay Now</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="button" class="btn btn-grey" ng-click="$hide()">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
